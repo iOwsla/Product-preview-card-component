@@ -1,0 +1,235 @@
+@import url('https://fonts.googleapis.com/css2?family=Montserrat:wght@500;700&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Fraunces:opsz,wght@9..144,700&display=swap');
+
+$grid-large: 1200px;
+$grid-medium: 975px;
+$grid-small: 575px;
+
+$dark: hsl(158, 36%, 37%);
+$cream: hsl(30, 38%, 92%);
+$very_dark: hsl(212, 21%, 14%);
+$dark_grayish: hsl(228, 12%, 48%);
+$white: hsl(0, 0%, 100%);
+
+$Montserrat: 'Montserrat', sans-serif;
+//noinspection SpellCheckingInspection
+$Fraunces: 'Fraunces', sans-serif;
+
+* {
+  margin: 0;
+  padding: 0;
+}
+
+html {
+  box-sizing: border-box;
+}
+
+body, html {
+  font-family: $Montserrat;
+  background: $cream;
+  font-size: 16px;
+
+}
+
+a {
+  text-decoration: none;
+}
+
+li, ol {
+  list-style: none;
+}
+
+button {
+  border: none;
+}
+
+p {
+  font-size: 14px;
+}
+
+.container {
+  width: 1300px;
+  margin: auto;
+}
+
+@media (max-width: $grid-large) {
+  .container {
+    width: $grid-medium;
+  }
+}
+
+@media (max-width: $grid-medium) {
+  .container {
+    width: $grid-small;
+  }
+}
+
+@media (max-width: $grid-small) {
+  .container {
+    width: 100%;
+  }
+}
+
+.box_container {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  height: 100vh;
+
+  .box {
+    background: $white;
+    display: flex;
+    border-radius: 10px;
+
+    .box_image {
+      width: 35%;
+      background-image: url("../images/image-product-desktop.jpg");
+      background-repeat: no-repeat;
+      background-position: center;
+      background-size: cover;
+      border-top-left-radius: 10px;
+      border-bottom-left-radius: 10px;
+    }
+
+    .box_content {
+      margin-top: 20px;
+      width: calc(65% - 50px);
+      margin-left: 50px;
+
+      .box_subtitle {
+        color: $dark_grayish;
+        font-size: 20px;
+        text-transform: uppercase;
+        margin-bottom: 20px;
+      }
+
+      .box_title {
+        font-size: 48px;
+        white-space: pre-line;
+        font-weight: 700;
+        font-family: $Fraunces;
+        margin-bottom: 20px;
+      }
+
+      p {
+        color: $dark_grayish;
+        width: 50%;
+        margin-bottom: 20px;
+      }
+
+      .box_price {
+        font-family: $Fraunces;
+        display: flex;
+        align-items: center;
+        font-size: 48px;
+        color: #3d8168;
+
+        span {
+          font-family: $Montserrat;
+          font-weight: normal;
+          color: $dark_grayish;
+          margin-left: 20px;
+          font-size: 16px;
+          text-decoration: line-through;
+        }
+
+        margin-bottom: 20px;
+      }
+
+      .box_button {
+        cursor: pointer;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        width: 70%;
+        height: 3.5rem;
+        background: #3d8168;
+        border-radius: 1rem;
+        margin-bottom: 2rem;
+        color: $white;
+        font-weight: bold;
+        font-size: 1.5rem;
+
+        &:hover {
+          background: #1a4031;
+        }
+
+        img {
+          margin-right: 10px;
+          width: 20px;
+          height: 20px;
+        }
+      }
+    }
+
+  }
+}
+
+@media (max-width: $grid-medium) {
+  .box_container {
+    .box {
+      .box_content {
+        .box_title {
+          font-size: 38px;
+        }
+
+        p {
+          width: 90%;
+        }
+
+        .box_price {
+          font-size: 38px;
+        }
+      }
+    }
+  }
+}
+
+@media (max-width: $grid-small) {
+  .box_container {
+    flex-direction: column;
+    width: calc(100% - 30px);
+    margin: 5% auto;
+
+    .box {
+      flex-direction: column;
+
+      .box_image {
+        width: 100%;
+        height: 300px;
+        background-position: unset;
+        border-radius: 10px 10px 0px 0px;
+      }
+
+      .box_content {
+        width: calc(100% - 50px);
+        margin-left: 20px;
+
+        .box_subtitle {
+          font-size: 20px;
+        }
+
+        .box_title {
+          font-size: 28px;
+          white-space: normal;
+        }
+
+        p {
+          width: 100%;
+        }
+
+        .box_price {
+          font-size: 28px;
+        }
+
+        .box_button {
+          margin: auto;
+          width: 100%;
+          margin-bottom: 20px;
+        }
+      }
+
+    }
+  }
+}
